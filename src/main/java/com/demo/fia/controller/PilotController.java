@@ -31,7 +31,7 @@ public class PilotController {
     }
 
     @DeleteMapping("{publicId}")
-    public void delete(@PathVariable UUID publicId) {
-        pilotService.delete(publicId);
+    public Pilot delete(@PathVariable UUID publicId) {
+        return pilotService.delete(publicId);
     }
 }
