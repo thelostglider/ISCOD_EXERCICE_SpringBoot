@@ -16,8 +16,13 @@ public class RaceController {
     private final RaceService raceService;
 
     @PostMapping
-    public Race create(Race race) {
+    public Race create(@RequestBody Race race) {
         return raceService.create(race);
+    }
+
+    @PostMapping("/{racePublicId}/{speed}/start")
+    public List<String> start(@PathVariable UUID racePublicId, @PathVariable int speed) {
+        return raceService.start(racePublicId, speed);
     }
 
     @GetMapping

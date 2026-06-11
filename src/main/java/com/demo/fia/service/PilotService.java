@@ -28,6 +28,10 @@ public class PilotService {
         return pilotRepository.findByPublicIdIn(publicIds);
     }
 
+    public List<Pilot> readSpeedCompatiblePilots(int speed) {
+        return pilotRepository.findByCarSpeedGreaterThanEqual(speed);
+    }
+
     public Pilot updateCar(UUID pilotPublicId, UUID carPublicId) {
 
         Pilot pilot = pilotRepository.findByPublicId(pilotPublicId);
